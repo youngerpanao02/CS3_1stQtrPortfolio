@@ -2,21 +2,37 @@
 <body>
 
 <h2>Feed Me My Snacks</h2>
-<p> <strong>Put your crush's name</strong> so we can let you eat your crush</p>
+<p> <strong>Put your age</strong> to determine your fate mwahahahahaha</p>
 
-<form action="/action_page.php">
-  <label for="fname">Eneter your age:</label>
-  <input type="text" id="fname" name="fname"><br>
-  <label for="lname">Enter your Max Age: </label>
-  <input type="text" id="lname" name="lname"><br>
-    <label for="lname">Enter your number of snacks: </label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <p> Result: <p>
-  <input type="submit" value="Submit yayayayyayayayayayayay">
+  <label for="age">Eneter your age:</label>
+  <input type="text" id="age" name="age"><br>
+  <label for="maxAge">Enter your Max Age: </label>
+  <input type="text" id="maxAge" name="maxAge"><br>
+  <label for="Snacks">Enter your number of snacks: </label>
+  <input type="text" id="Snacks" name="Snacks"><br><br>
 
 
+  <p id="result"></p>
+  <button onclick="getData()"> Accept Input </button>
+  <script>
+    function getData(){
+      let age = document.getElementById("age").value;
+      let maxAge = document.getElementById("maxAge").value;
+      let Snacks = document.getElementById("Snacks").value;
+      let sure = window.confirm("Sure of your numbers?")
+      if (sure) {
+      let totalRequired = (Number(Snacks) * 365) * (Number(maxAge) - Number(age));
+      result.innerHTML = "You will need " + totalRequired +   " to last you until the ripe old age of " + maxAge;
+    
+    }
+    else {
+      window.alert("Please click run again")
+    }
+  }
 
-<script>
+
+
+
   //  let age = window.prompt("Enter the name age: ", "14");
  //  let sureage = (confirm("Is" ${age} " really your age, pookie?")) 
 //let maxAge = window.prompt("What's your life expentancy, pookie?");
