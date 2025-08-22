@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q1 3rd Graded Exercise</title>
+</head>
+<body>
+
+<b>Q1 3rd Graded Exercise submitted by Younger of 9-Beryllium</b>
+<br><br>
+
+Guess the number: ****
+<br><br>
+
+The Number is from 1 to 100
+<br><br>
+
+Enter your guess: <input type="text" id="userGuess" name="userGuess">
+<br><br>
+
+<button onclick="checkIt()">Check mo nga kung tama</button>
+<br><br>
+
+<p id="result"></p>
+
+<script>
+    // generate a random number from 1 to 100 when the page loads
+    var secretNumber = Math.floor(Math.random() * 100) + 1;
+
+    function checkIt() {
+        let guess = document.getElementById("userGuess").value;
+        let output = document.getElementById("result");
+
+        let confirmGuess = window.confirm("Sure ka na ba diyan, teh?");
+
+        if (confirmGuess) {
+            guess = Number(guess);
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                output.innerHTML = "Pahingi ng number from 1 to 100 please.";
+            } else if (guess < secretNumber) {
+                output.innerHTML = "Taasan mo pa!";
+            } else if (guess > secretNumber) {
+                output.innerHTML = "Kalma, ibaba mo yung number teh!";
+            } else {
+                output.innerHTML = "Tumpak Ganern!";
+            }
+        } else {
+            alert("Uhhh, ulitin mo nga jusko naman.");
+        }
+    }
+</script>
+</body>
+</html>
