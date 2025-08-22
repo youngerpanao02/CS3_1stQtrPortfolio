@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q1 2nd Graded Exercise</title>
+</head>
+<body>
+
+<h2>Q1 2nd Graded Exercise submitted by Younger of 9-Beryllium</h2>
+
+<label for="presyoPagkainBebe">Magkano pagkain mo, makikishare ako:</label>
+<input type="text" id="presyoPagkainBebe" name="presyoPagkainBebe"><br>
+
+<label for="tiHoy">Penge tip, bankrupt na restaurant namin:</label>
+<input type="text" id="tiHoy" ßname="tiHoy"><br>
+
+<label for="serviceChargeSipag">Service Charge forda sipag kasi kami:</label>
+<input type="text" id="serviceChargeSipag" name="serviceChargeSipag"><br><br>
+
+<button onclick="totalMeal()">Submit mo na teh</button>
+
+<p id="totalMeal"></p>
+
+<script>
+    function totalMeal() {
+        let presyoPagkainBebe = document.getElementById("presyoPagkainBebe").value;
+        let tiHoy = document.getElementById("tiHoy").value;
+        let serviceChargeSipag = document.getElementById("serviceChargeSipag").value;
+        
+        let resultParagraph = document.getElementById("totalMeal");
+
+        let sure = window.confirm("Gurl, sure ka na ba dyan sa mga values mo???");
+
+        if (sure) {
+            let tipAmount = Number(presyoPagkainBebe) * (Number(tiHoy) / 100);
+            let serviceChargeAmount = Number(presyoPagkainBebe) * (Number(serviceChargeSipag) / 100);
+            let total = Number(presyoPagkainBebe) + tipAmount + serviceChargeAmount;
+            total = total.toFixed(2);
+
+            resultParagraph.innerHTML = "Total Meal: " + total;
+        } else {
+            alert("Luh, ulitin mo nga!");
+        }
+    }
+</script>
+
+<footer>
+  <p>REFERENCES:   https://www.w3schools.com/html/html_head.asp </p>
+       <p> https://www.w3schools.com/tags/tag_b.asp#gsc.tab=0 </p>
+       <p> https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tofixed </p>
+       <p> https://www.w3schools.com/jsref/jsref_tofixed.asp </p>
+</footer>
+
+</body>
+</html>
